@@ -1,0 +1,39 @@
+services:
+  redis:
+    image: redis:7-alpine
+    container_name: scalping-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+
+  app:
+    image: scalping-trainer-app:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: scalping-app
+    restart: unless-stopped
+    environment:
+      - REDIS_URL=redis://redis:6379/0
+    depends_on:
+      - redis
+    ports:
+      - "8001:8001"
+    # If you want live-reload in development, mount the source and run uvicorn with --reload
+    # volumes:
+    #   - ./:/app
+    # command: ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8001", "--reload"]
+
+  frontend:
+    image: node:20-alpine
+    container_name: scalping-frontend
+    working_dir: /app
+    volumes:
+      - ./:/app
+    command: sh -c "npm ci && npm run dev -- --host 0.0.0.0 --port 3000"
+    environment:
+      - NODE_ENV=development
+    depends_on:
+      - app
+    ports:
+      - "3000:3000"

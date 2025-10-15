@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>AI Trading WS Tester</title>
+  <style>
+    body { font-family: system-ui, Arial, sans-serif; margin: 20px; }
+    #log { white-space: pre-wrap; background: #111; color: #0f0; padding: 10px; height: 60vh; overflow: auto; }
+    .row { margin-bottom: 10px; }
+    input { width: 360px; }
+  </style>
+</head>
+<body>
+  <h1>AI Trading WebSocket Tester</h1>
+  <div class="row">
+    <label>WebSocket URL: <input id="wsUrl" value="ws://localhost:8001/ws/ai-trading" /></label>
+    <button id="connectBtn">Connect</button>
+    <button id="disconnectBtn">Disconnect</button>
+  </div>
+  <div id="status">Disconnected</div>
+  <div id="log"></div>
+  <script>
+    let ws;
+    const logEl = document.getElementById('log');
+    const statusEl = document.getElementById('status');
+
+    function log(msg) {
+      const ts = new Date().toISOString();
+      logEl.textContent += `[${ts}] ${msg}\n`;
+      logEl.scrollTop = logEl.scrollHeight;
+    }
+
+    document.getElementById('connectBtn').onclick = () => {
+      const url = document.getElementById('wsUrl').value;
+      if (ws && ws.readyState === WebSocket.OPEN) {
+        log('Already connected');
+        return;
+        }
+      log(`Connecting to ${url} ...`);
+      ws = new WebSocket(url);
+      ws.onopen = () => { statusEl.textContent = 'Connected'; log('Connected'); };
+      ws.onclose = () => { statusEl.textContent = 'Disconnected'; log('Disconnected'); };
+      ws.onerror = (e) => { log('Error: ' + (e && e.message || e)); };
+      ws.onmessage = (e) => {
+        try {
+          const data = JSON.parse(e.data);
+          const type = data && data.type;
+          log(`Message type=${type}, keys=${Object.keys(data)}`);
+        } catch (err) {
+          log('Message: ' + e.data);
+        }
+      };
+    };
+
+    document.getElementById('disconnectBtn').onclick = () => {
+      if (ws) { ws.close(); }
+    };
+  </script>
+</body>
+</html>

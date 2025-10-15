@@ -1,0 +1,149 @@
+{
+    "rules": [
+      {
+        "personality": "공격적",
+        "style": "초단기",
+        "max_trades_per_day": 20,
+        "leverage": "20-30x",
+        "stop_loss_pct": -1.5,
+        "take_profit_pct": 2.5,
+        "daily_loss_limit_pct": -3,
+        "weekly_loss_limit_pct": -10,
+        "reentry_after_profit": false,
+        "position_size_pct": "10-20%"
+      },
+      {
+        "personality": "공격적",
+        "style": "단기",
+        "max_trades_per_day": 10,
+        "leverage": "15-20x",
+        "stop_loss_pct": -2,
+        "take_profit_pct": 4,
+        "daily_loss_limit_pct": -3,
+        "weekly_loss_limit_pct": -10,
+        "reentry_after_profit": false,
+        "position_size_pct": "10-20%"
+      },
+      {
+        "personality": "공격적",
+        "style": "중기",
+        "max_trades_per_day": 6,
+        "leverage": "10-15x",
+        "stop_loss_pct": -3,
+        "take_profit_pct": 6,
+        "daily_loss_limit_pct": -3,
+        "weekly_loss_limit_pct": -10,
+        "reentry_after_profit": false,
+        "position_size_pct": "10-20%"
+      },
+      {
+        "personality": "공격적",
+        "style": "장기",
+        "max_trades_per_day": 3,
+        "leverage": "5-10x",
+        "stop_loss_pct": -4,
+        "take_profit_pct": 8,
+        "daily_loss_limit_pct": -3,
+        "weekly_loss_limit_pct": -10,
+        "reentry_after_profit": false,
+        "position_size_pct": "10-20%"
+      },
+      {
+        "personality": "보통",
+        "style": "초단기",
+        "max_trades_per_day": 10,
+        "leverage": "10-15x",
+        "stop_loss_pct": -1,
+        "take_profit_pct": 2,
+        "daily_loss_limit_pct": -3,
+        "weekly_loss_limit_pct": -10,
+        "reentry_after_profit": false,
+        "position_size_pct": "10-20%"
+      },
+      {
+        "personality": "보통",
+        "style": "단기",
+        "max_trades_per_day": 6,
+        "leverage": "7-10x",
+        "stop_loss_pct": -1.5,
+        "take_profit_pct": 3,
+        "daily_loss_limit_pct": -3,
+        "weekly_loss_limit_pct": -10,
+        "reentry_after_profit": false,
+        "position_size_pct": "10-20%"
+      },
+      {
+        "personality": "보통",
+        "style": "중기",
+        "max_trades_per_day": 4,
+        "leverage": "5-7x",
+        "stop_loss_pct": -2,
+        "take_profit_pct": 4,
+        "daily_loss_limit_pct": -3,
+        "weekly_loss_limit_pct": -10,
+        "reentry_after_profit": false,
+        "position_size_pct": "10-20%"
+      },
+      {
+        "personality": "보통",
+        "style": "장기",
+        "max_trades_per_day": 2,
+        "leverage": "3-5x",
+        "stop_loss_pct": -3,
+        "take_profit_pct": 5,
+        "daily_loss_limit_pct": -3,
+        "weekly_loss_limit_pct": -10,
+        "reentry_after_profit": false,
+        "position_size_pct": "10-20%"
+      },
+      {
+        "personality": "보수적",
+        "style": "초단기",
+        "max_trades_per_day": 5,
+        "leverage": "5-7x",
+        "stop_loss_pct": -0.7,
+        "take_profit_pct": 1.5,
+        "daily_loss_limit_pct": -3,
+        "weekly_loss_limit_pct": -10,
+        "reentry_after_profit": false,
+        "position_size_pct": "10-20%"
+      },
+      {
+        "personality": "보수적",
+        "style": "단기",
+        "max_trades_per_day": 4,
+        "leverage": "3-5x",
+        "stop_loss_pct": -1,
+        "take_profit_pct": 2,
+        "daily_loss_limit_pct": -3,
+        "weekly_loss_limit_pct": -10,
+        "reentry_after_profit": false,
+        "position_size_pct": "10-20%"
+      },
+      {
+        "personality": "보수적",
+        "style": "중기",
+        "max_trades_per_day": 3,
+        "leverage": "2-3x",
+        "stop_loss_pct": -1.5,
+        "take_profit_pct": 3,
+        "daily_loss_limit_pct": -3,
+        "weekly_loss_limit_pct": -10,
+        "reentry_after_profit": false,
+        "position_size_pct": "10-20%"
+      },
+      {
+        "personality": "보수적",
+        "style": "장기",
+        "max_trades_per_day": 2,
+        "leverage": "1-2x",
+        "stop_loss_pct": -2,
+        "take_profit_pct": 4,
+        "daily_loss_limit_pct": -3,
+        "weekly_loss_limit_pct": -10,
+        "reentry_after_profit": false,
+        "position_size_pct": "10-20%"
+      }
+    ]
+  }
+  
